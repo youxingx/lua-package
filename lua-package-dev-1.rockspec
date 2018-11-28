@@ -1,26 +1,22 @@
 package = "lua-package"
 version = "dev-1"
 source = {
-   url = "*** please add URL for source tarball, zip or repository here ***"
+    url = "git@github.com:youxingx/lua-package.git"
 }
 description = {
-   homepage = "*** please enter a project homepage ***",
-   license = "*** please specify a license ***"
+    #设置描述信息
+    summary = "A test lua package with luarocks",
+
+    homepage = "https://github.com/youxingx/lua-package",
+    maintainer = "1097900172@gmail.com",
+    license = "MIT"
 }
 dependencies = {
-   {
-      constraints = {
-         {
-            op = "~>",
-            version = {
-               5, 1, string = "5.1"
-            }
-         }
-      },
-      name = "lua"
-   }
+    "lua >= 5.1, < 5.4"
 }
 build = {
-   type = "builtin",
-   modules = {}
+    type = "builtin",
+    modules = {
+        ["lua-package"] = "lua-package.lua"
+    }
 }
